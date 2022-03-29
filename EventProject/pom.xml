@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.3</version>
+		<version>2.4.12</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>tn.ehssen</groupId>
 	<artifactId>EventProject</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>EventProject</name>
 	<description> project for Spring Boot</description>
 	<properties>
@@ -52,6 +52,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
+        
+        <dependency> 
+    <groupId>org.springframework.boot</groupId> 
+    <artifactId>spring-boot-starter-validation</artifactId> 
+</dependency>
 	</dependencies>
 
 	<build>
