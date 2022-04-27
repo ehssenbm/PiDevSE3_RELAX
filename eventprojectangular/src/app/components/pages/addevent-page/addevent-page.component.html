@@ -1,0 +1,109 @@
+<app-header-style></app-header-style>
+
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="idEvent" [value]="service.formData.idEvent">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-user-circle"></i>
+        </div>
+      </div>
+      <input name="Name" #CardOwnerName="ngModel" [(ngModel)]="service.formData.nameEvent" class="form-control"
+        placeholder="Name" required>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="far fa-angry"></i>
+        </div>
+      </div>
+      <input name="nbPlace" #CardNumber="ngModel" [(ngModel)]="service.formData.nbPlace" 
+      class="form-control" placeholder="nbPlace">
+    </div>
+  </div><br>
+  <div class="form-row">
+    <div class="form-group col-md-7">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+        </div>
+        <input name="Date" #ExpirationDate="ngModel" [(ngModel)]="service.formData.dateEvent" class="form-control"
+          placeholder="MM/YY" required>
+      </div>
+    </div><br>
+    <div class="form-group col-md-5">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+            <i class="fas fa-clock"></i>
+          </div>
+        </div>
+        <input type="text" name="EventDescription" #CVV="ngModel" [(ngModel)]="service.formData.eventDescription" class="form-control" placeholder="EventDescription"
+        required >
+      </div>
+    </div><br>
+    <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-user-circle"></i>
+            </div>
+          </div>
+          <input name="adresse" #CardOwnerName="ngModel" [(ngModel)]="service.formData.adress" class="form-control"
+            placeholder="adresse" required>
+        </div>
+      </div><br>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-user-circle"></i>
+            </div>
+          </div>
+          <input name="photos" #CardOwnerName="ngModel" [(ngModel)]="service.formData.photos" class="form-control"
+            placeholder="photos" required>
+        </div>
+      </div><br>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-user-circle"></i>
+            </div>
+          </div>
+          <input name="CategorieEvents" #CardOwnerName="ngModel" [(ngModel)]="service.formData.categorieEvents" class="form-control"
+            placeholder="CategorieEvents" required>
+        </div>
+      </div><br>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-user-circle"></i>
+            </div>
+          </div>
+          <input name="pseudo" #CardOwnerName="ngModel" [(ngModel)]="service.formData.pseudo" class="form-control"
+            placeholder="pseudo" required>
+        </div>
+      </div><br>
+  </div><br>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-user-circle"></i>
+        </div>
+      </div>
+      <input name="soireeId" #CardOwnerName="ngModel" [(ngModel)]="service.formData.soireeId" class="form-control"
+        placeholder="soireeId" required>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid" (click)="addevent(form)"><i class="fas fa-database"></i> Submit</button>
+  </div>
+</form>

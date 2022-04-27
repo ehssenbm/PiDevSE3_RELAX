@@ -1,0 +1,96 @@
+<app-header-style></app-header-style>
+<app-search></app-search>
+<div class="page-title-area item-bg4">
+    <div class="container">
+        <div class="page-title-content">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>Events</li>
+            </ul>
+            <h2>Events</h2>
+        </div>
+    </div>
+</div> 
+
+<button routerLink="/addevent"  class="default-btn"><i class='bx bx-paper-plane icon-arrow before'></i><span class="label">Add Event </span><i class="bx bx-paper-plane icon-arrow after"></i></button>
+
+<div class="events-area pt-100 pb-70" >
+    <div class="container" *ngFor="let e of events">
+        
+       
+        <div class="single-events-box mb-30">
+            <div class="events-box">
+                <div class="events-image">
+                    <div class="image bg4">
+                        <img src="assets/img/events/events4.jpg" alt="image" />
+                    </div>
+                </div>
+                <div class="events-content">
+                    <div class="content">
+                        <h3>
+                            <a routerLink="/single-events"
+                                >{{ e.nameEvent}}</a
+                            >
+                        </h3>
+                        <p>
+                            {{ e.EventDescription}}
+                        </p>
+                        <span class="location"
+                            ><i class="bx bx-map"></i> 
+                            {{ e.Adress}}</span
+                        >
+                        <a routerLink="/single-events" class="join-now-btn"
+                            >Join Now</a
+                        >
+                    </div>
+                </div>
+                <div class="events-date">
+                    <div class="date">
+                        <div class="d-table">
+                            <div class="d-table-cell">
+                                <span></span>
+                                <h3>{{ e.dateEvent}}</h3>
+                                <p></p>
+                                <i class="bx bx-calendar"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+
+
+ <table class="table">
+
+    <thead class="thead-dark">
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Place</th>
+            <th>Description</th>
+            <th>date</th>
+            <th>Adress</th>
+            <th>Categorie</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let e of events">
+            <td class="align-middle">
+                 <img src="{{ e.photo }}" height="50" />
+            </td>
+            <td class="align-middle">{{ e.idEvent}}</td>
+
+            <td class="align-middle">{{ e.nameEvent}}</td>
+            <td class="align-middle">{{ e.nbPlace | currency:'PLACE'}}</td>
+            <td class="align-middle">{{ e.EventDescription}}</td>
+            <td class="align-middle">{{ e.dateEvent}}</td>
+            <td class="align-middle">{{ e.Adress}}</td>
+            <td class="align-middle">{{ e.CategorieEvents}}</td> 
+
+        </tr>
+
+    </tbody>
+</table> 
